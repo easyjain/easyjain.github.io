@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyJain - Books</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #a237be;
+      --text-main: #212121;
+      --bg-page: #ffffff;
+      --bg-section: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      min-height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #1f1f1f;
+    }
+
+    .brand img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20pt;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #1f1f1f;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 400;
+      color: #1f1f1f;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(31, 31, 31, 0.08);
+    }
+
+    nav a.active {
+      background-color: #1f1f1f;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Page Title Banner */
+    .page-header {
+      padding: 50px 20px 30px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .page-header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 44pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #1f1f1f;
+      letter-spacing: 1px;
+    }
+
+    /* Books Grid matching Google Sites Layout */
+    .books-container {
+      max-width: 1100px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+
+    .book-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      align-items: start;
+    }
+
+    .book-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #ffffff;
+      text-align: center;
+    }
+
+    .book-cover-wrap {
+      width: 100%;
+      max-width: 320px;
+      aspect-ratio: 3 / 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 6px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      margin-bottom: 20px;
+      background-color: #f3f3f3;
+    }
+
+    .book-cover-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Pill Action Buttons */
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 100%;
+      max-width: 280px;
+    }
+
+    .book-btn {
+      display: inline-block;
+      width: 100%;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13pt;
+      line-height: 22px;
+      font-weight: 600;
+      padding: 10px 18px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      transition: opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    .book-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11pt;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 32pt; }
+      .nav-wrapper { flex-direction: column; gap: 12px; }
+      nav { justify-content: center; gap: 4px; }
+      nav a { font-size: 10.5pt; padding: 6px 10px; }
+      .book-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383" alt="EasyJain Logo">
+        <span>EasyJain</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html" class="active">Books</a>
+        <a href="videos.html">Videos</a>
+        <a href="paathshala.html">Paathshala</a>
+        <a href="posters.html">Posters</a>
+        <a href="ask-queries.html">Ask Queries</a>
+        <a href="sankalp-confessions.html">Sankalp &amp; Confessions</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Books Heading -->
+  <section class="page-header">
+    <h1>Books</h1>
+  </section>
+
+  <!-- Books Content Grid -->
+  <main class="books-container">
+    
+    <!-- Row 1 -->
+    <div class="book-row">
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUBLIxBLR3mKgVeN0xFxHrQOjICH34e2FdqXdktse1OFhs-DQYhcY1FA_sP9qtihpLtfLldO5-eJY2sEt2sLIyil6ocMNLPPC-SEC22T4MkVrNQwrjfpc3hViXauWt2uJLKq2d8LqbPU7b-lOFlHGZNvBkTlp-nkJZ55XgTkW-3gDLlMzv7GxDc8jby6TfyP14JBbqk8DxifHYwQsXmzSHSxBrX405LcDccqeeJPwY=w1280" alt="जैन धर्म और दर्शन">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1-TLzMrUQNduNVeulkd3b8_r5TAOksgcX" target="_blank">जैन धर्म और दर्शन</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVEe44ng46G3TJKkrcL-o-DQHmfV3d7wWmOJX-tjn5eWjrV_Dpby39pZ0lOx9R2ioGwHhNrkZJJc8FmJr-DCjShE_JJ7VpMJrY4TW1wSv3c4pKgBrDhqY2952OOzU97B8pd0euDsV7TcravDqZdRhqC0Cso-McFeR6LdUjMsQlFpjdKfU9q33aN2pTTdR573ajjLx3hvkxBTronEt8u8qDFte8qVov_R4y6ONHnnhg=w1280" alt="कर्म कैसे करें?">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/160Sdsmn3_Dny088XglE6qxOWVEdcdehH" target="_blank">कर्म कैसे करें?</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUKlN4eVZBlkIlUVPEqJpUsw_uhk4jPuzQTJl1bSgeby5EsUbIuG7viY79JKXvW6xN_554cn1TRXlFlQnbfJnJODkFFPhhGQiHYwzyLS9K_aFvCd3NFVecMVSa4HJ4VlIBcjXHINcFDFb2KbhG4SZMkgxR35GQZYrHxMsF33P0BZUQ7n_KJu0Gbiydxl5dJ5jbE3FG4AZwuRcLSyYm8Hv8IS1kmpjg8ltfyruYmuw0=w1280" alt="जैनत्व की गौरव गाथा">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/drive/folders/113hDgsDUzpqnLhR0qpcxnxuwYDGdO8fp" target="_blank">जैनत्व की गौरव गाथा</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="book-row">
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVrgfTeTUgkkKI5C0BYf6xwisS49jMj7cz_YW5DCpCw6C-c8ibPuMj4wlC8i268FXobxVAhqAI_CC_1BcUFuLbiQ6cuOhxuLV4Jllwspq0fyWiHZZFieAb2c_AOYOSlBGWRNSYHq1xciuzAnkiJeFrFYL56tx9FVelW4GAdv2yFTp0rqJmd_ewFr4h_GjQNlg5sCke6mtwU44UbIdX13CS2iMBzh8QEMrI6lBqFYBE=w1280" alt="शान्ति-पथ प्रदर्शन">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1oQueZHRdgU2rnO10CCg2g0f0Bsvs-EqH" target="_blank">शान्ति-पथ प्रदर्शन</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVcVdYZlQjEFiIxWGqMGPoTGi1qb17lhxuJei7m5g7sHCLdyJ57iyak2c6uUqvbTZiqC--g1HWK9bXO8Edw1aCWM72n_otLC3A_-PwUQnixCVGyxm9Z1i6ZOLCfRuueFvEmG-iH5NMAu19xUSWmsZmpPjkZKiyfMcP5f2rvP4W39IcOysGW7gsrRuwCdoDPvEXjV4E5JSPoSjdq5m0grwOiMuB__klZ__6pjbyk=w1280" alt="शील-मंजूषा">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1PpOWH-5f6dnygjaUdEn-nOCPIdSYxytq" target="_blank">शील-मंजूषा</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWYyEbuS2OKjLZO4YZ0lj2M-WAdN5nafmSokEDcepOA1ACQ8Cj6nfoMa7fheHeM3_bVaUO1dqZZXcdZkVhpnq5H8u30bMcFqQY2OqnbVKLevS2kZB-MSrQhRzFf4d1C8myaM7E9FzuMcGlrNb3cYFjGANRCijazWQW_-2UcvUUeq2-4IaCPkQjQnk5HEgyTvinuOCdLvi07N754da1oqBMnASF2zrqphFJT2SK8OBg=w1280" alt="श्रमण परंपरा संप्रवाहक">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/15QwQcdFgjD3ar-KwSAzZwSId12yQE-uF" target="_blank">श्रमण परंपरा संप्रवाहक</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="book-row">
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWi5HSEE0Y1k7DtX4sEP_ytqUQI9qJOb4stlKaMqpw8H-mnOYztcL1A_BUlWBiDvUQHdUHz2dQ6XRQr7upa6KUtEfLCHOhWSmmd5oE5ldZkzCseY7w1SZmKt7jeh6KYxMLCPoQCSjw4o6oxJ625swfk8ZoPmKwCn1289nbNkpdohxqZ-dQQsMnxP7OBy7KBvGca53Letc5oKy5h_MBv5saC7OlRsIfKFQnui-u1Vbg=w1280" alt="आचार्य श्री हाइकू हाइकू">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1qyvBBxxqcY6YhYUSyo3oPplk03zmBWCq/view" target="_blank">आचार्य श्री हाइकू हाइकू</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWzkFkB0z2JCjPY81N3ZhIe9nR-jOsPoBpXlXJQSc_l_51AlTsV9apo_Y2dB7JidbhRTAxHPwZoTOVgp9PhV3tryjTYHgLNyy-k_PCEycjYdsYdqv-MBdshHmQoN4Togu2-CfOlnm1PXUSjXMflUO8Bw-ZgVKQW53aMOyHwYvONpuQjXiK1RV4ba7dkXQ5rwWvsc7yyt6oi0I2vc-Niryw1GUy1Z1HjRRQXJ36OMTI=w1280" alt="अंग्रेजी माध्यम का भ्रमजाल">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1LAKcx3rbMq76DhJMEv9jQKKf0h7aFBi7/view" target="_blank">अंग्रेजी माध्यम का भ्रमजाल</a>
+        </div>
+      </div>
+
+      <div class="book-card">
+        <div class="book-cover-wrap">
+          <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVcsA_8n_ekaAisZv4CQ1dQDBQZ0lATwCG5a7roOWjj5yvRLU0ACSfkeTvwwXUDGyL_Xc2Z3PMOhtZKScbJz9-XP0LrCDVskB08r836d1M8WAyNigoKNitx-3lsvryMWIWJKQTcIhstZlgn-GOZmoX_o7T7uRBtSkfqxzPpntkWexnShkgCmb6YLFMnJxzg-91Ccxm5PE-CzGrbNcA1FGXG28eDxOCrnpEiHCHDckQ=w1280" alt="सोने की चिड़िया">
+        </div>
+        <div class="btn-group">
+          <a class="book-btn" href="https://drive.google.com/file/d/1rqHME5FJJxsU6IsuUiInuie7JNb9pjJj/view" target="_blank">सोने की चिड़िया (English)</a>
+          <a class="book-btn" href="https://drive.google.com/file/d/11DCnf_cSFkJ70vDCKl1spheO7URJ9V4v/view?usp=drive_link" target="_blank">सोने की चिड़िया (हिन्दी)</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; EasyJain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
