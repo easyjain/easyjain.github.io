@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyJain - Posters</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #a237be;
+      --text-main: #212121;
+      --bg-page: #ffffff;
+      --bg-section: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      min-height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #1f1f1f;
+    }
+
+    .brand img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20pt;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #1f1f1f;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 400;
+      color: #1f1f1f;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(31, 31, 31, 0.08);
+    }
+
+    nav a.active {
+      background-color: #1f1f1f;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Page Header */
+    .page-header {
+      padding: 50px 20px 30px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .page-header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 44pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #1f1f1f;
+      letter-spacing: 1px;
+    }
+
+    /* Posters Grid matching Google Sites 2-column layout */
+    .posters-container {
+      max-width: 1050px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .poster-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      align-items: center;
+    }
+
+    .poster-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+      background: #fdfdfd;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .poster-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+    }
+
+    .poster-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11pt;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 32pt; }
+      .nav-wrapper { flex-direction: column; gap: 12px; }
+      nav { justify-content: center; gap: 4px; }
+      nav a { font-size: 10.5pt; padding: 6px 10px; }
+      .poster-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383" alt="EasyJain Logo">
+        <span>EasyJain</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="videos.html">Videos</a>
+        <a href="paathshala.html">Paathshala</a>
+        <a href="posters.html" class="active">Posters</a>
+        <a href="ask-queries.html">Ask Queries</a>
+        <a href="sankalp-confessions.html">Sankalp &amp; Confessions</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Posters</h1>
+  </section>
+
+  <!-- Posters Grid -->
+  <main class="posters-container">
+    
+    <!-- Row 1 -->
+    <div class="poster-row">
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWusW2pgt--790AUvgYLLBNmUTvHE-QEFdpmZqUpOee8FEfoIPRFqWhBDSCTT5Ov411h8jiOg04GlxL5NUuP5FZCpFjtxL9Qvenwc0y6X4o35UGnwz8J_Cx9MfgfsfRGV2Dhh5oWBKmSyQJS9EZGAc6TT9aoV8kq9duxBAVF75TArUpHGikY3SIUAPtW6uba0OLX0f_9p16AJ7EwkKq_Uj99_H7wN7owfvptHUw=w1280" alt="Poster 1">
+      </div>
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVHdzPXAwheeG2GfW5KEqXmVpHQK4-dtxFGpmTWt8plTHJ15601g6C2FsRLU0mt61Yf-swigb2uNpEsoQm5FOP84pUN4XWOm5HQQiUMFHlq6TpGz_qhVKAhdQVLmKFWhwfH1moiFf1iafdhuEp7y5yncQLtlKpBwBK_2StGNt0vk4JK9hTbx-B0820ic1G-FsXg4LwG8aGzqPxUIz7vliTHRAOk0FfRtZCYzzhE=w1280" alt="Poster 2">
+      </div>
+    </div>
+
+    <!-- Row 2 -->
+    <div class="poster-row">
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQURzKvtnqiQhH5jcmfUu2Mw71ybSBUhh6Xo59682rhSWBUBS3wYr_eemq5qoLvH077tK0vYrLV30WRpI6GY1vGFGGxA6h8UgLFVmjkTUkTbUyBoIm5pm45Mt_oC7aTWbncP0trcRAjhVPNFrHlwyUzXNokW1RmShg7aKO_O5-aTk94KTfCPtgupE5whYYU2-bmf_y5chgctV_fqSQBW7GSawbuwOWJazRTQ1OFsLrU=w1280" alt="Poster 3">
+      </div>
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVREJfAWUgWUlujfdkI-PUStu2JhjZ1-l04eEAV2njlXJx2VvJ6ZMv702MWXaqM-VwUSt8DFFW03qvrCx3GMtIE0xNaMnMVkwyvc3KJDGCnOxRHGzE-X09xG6EIEYQiTKoXsOwIh10lBYRF6deB1eYiqi8zjTzsOLpAQk90OhF7Z0uCrN_zCT1kCdOYr2_biN7tbPY1oPjGDNl1XLZugKOpb0TGHt6CWKpHM1ud=w1280" alt="Poster 4">
+      </div>
+    </div>
+
+    <!-- Row 3 -->
+    <div class="poster-row">
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWF9IIPAovagw3p8Xg3uzR6iNHjtaTBidBhY1ZWtvPD1-QU2PZ6IpfD4fnbJl4uQNqn2652V4gXWJdFRjrAwRB1jkgM1-MIMAB9PcrYHLmwszMUfVibxMVLMDPIxLZLoW1SONKQAd-j0-bgcklnRw6hJJlputBqxC6_8FJpCUNIhiE5AA02flUEUfRjMwue2_Ptd58ehnRnn8QJv8FxsuVtpg9SRFFcf63fKidH=w1280" alt="Poster 5">
+      </div>
+      <div class="poster-card">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUtKYRXzIpKdatO2kYfehsAbWMDcZ-GB_kr2EZ5l_hrvmSYuj3R5rTBu_m7oK9rDyjnxXPBotQ30uBxghAb6L7vM8n7htYXkQkFfYSBadzJDObTtzWDqn8dsOmi4Yza1-Og9Als3Nn0W5NtEHM16psirY2_9AwWk_2MP5Hywn7sGgHQ5Z2ZG4OzjtRpS_8h3MEW6zcsAhRZQ59fTayLGW_1y1gX3V2u_Z2T7mKZprc=w1280" alt="Poster 6">
+      </div>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; EasyJain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
