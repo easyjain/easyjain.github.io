@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyJain - Paathshala</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #a237be;
+      --text-main: #212121;
+      --bg-page: #ffffff;
+      --bg-section: #f7f7f7;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header & Navigation */
+    header {
+      background: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    .nav-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 24px;
+      min-height: 64px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: #1f1f1f;
+    }
+
+    .brand img {
+      height: 38px;
+      width: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    .brand span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20pt;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #1f1f1f;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 400;
+      color: #1f1f1f;
+      text-decoration: none;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+
+    nav a:hover {
+      background-color: rgba(31, 31, 31, 0.08);
+    }
+
+    nav a.active {
+      background-color: #1f1f1f;
+      color: #ffffff;
+      font-weight: 600;
+    }
+
+    /* Page Title Banner */
+    .page-header {
+      padding: 50px 20px 20px;
+      text-align: center;
+      background-color: #ffffff;
+    }
+
+    .page-header h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 44pt;
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #1f1f1f;
+      letter-spacing: 1px;
+    }
+
+    /* Main Content Container */
+    .paathshala-container {
+      max-width: 900px;
+      margin: 0 auto 60px;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .feature-image-card {
+      width: 100%;
+      max-width: 760px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 3px 14px rgba(0,0,0,0.1);
+      background-color: #f7f7f7;
+    }
+
+    .feature-image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Side-by-Side Action Buttons matching Google Sites */
+    .actions-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      width: 100%;
+      max-width: 760px;
+    }
+
+    .paathshala-btn {
+      flex: 1 1 280px;
+      max-width: 340px;
+      background-color: var(--primary-color);
+      color: #ffffff;
+      border: 1px solid #ffffff;
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13pt;
+      line-height: 22px;
+      font-weight: 600;
+      padding: 12px 24px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      transition: opacity 0.2s ease, transform 0.1s ease;
+    }
+
+    .paathshala-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11pt;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .page-header h1 { font-size: 32pt; }
+      .nav-wrapper { flex-direction: column; gap: 12px; }
+      nav { justify-content: center; gap: 4px; }
+      nav a { font-size: 10.5pt; padding: 6px 10px; }
+      .actions-grid { flex-direction: column; align-items: center; }
+      .paathshala-btn { width: 100%; max-width: 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-wrapper">
+      <a href="index.html" class="brand">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQVw0Q7YJa4JyhVBepdlBQmr5Q4GLvR-JWMR6Fk0IrWXU0a-ONg6YGlNTXiDq8TPe5MLNFgEW2y8qPQsva0lDw6vpc2OP0axIJFUrbzT4TtO5Di2JGUTGZcOF9L01vfXcLGI0tQL-OYezcbPIW2BDvK8bSbzjz25gzTE_uksdo0kegedL04Nw2TZdxqqMFw=w16383" alt="EasyJain Logo">
+        <span>EasyJain</span>
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="books.html">Books</a>
+        <a href="videos.html">Videos</a>
+        <a href="paathshala.html" class="active">Paathshala</a>
+        <a href="posters.html">Posters</a>
+        <a href="ask-queries.html">Ask Queries</a>
+        <a href="sankalp-confessions.html">Sankalp &amp; Confessions</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <h1>Paathshala</h1>
+  </section>
+
+  <!-- Paathshala Content -->
+  <main class="paathshala-container">
+    
+    <!-- Feature Image -->
+    <div class="feature-image-card">
+      <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQUfmzzbvkLESNinJvaQBebipYFlxjG8K5p1yMMVgeWes8yDc8ERze0pwLXYA1atQTpCpIrQeBTUOxbd1pNxBHmMR6B1uLDBnRlsDcbqdgpx3dvH4ja1xemUDKApM2GZ1vy3V3Mh-s8oVsC-OLOdUr3-v3rbJ1CFh7LJuB9af_WSDgVqpzpyfOjFbE7NWal_NAun0_y4Wiljl4qJN1kJSf1hxrf02DS3Rze7eUGDcL4=w1280" alt="Paathshala">
+    </div>
+
+    <!-- Buttons Row -->
+    <div class="actions-grid">
+      <a class="paathshala-btn" href="https://chat.whatsapp.com/F8YIxSEi3c0BxinQ1f0CxJ" target="_blank">Online Paathshala</a>
+      <a class="paathshala-btn" href="https://tinyurl.com/PramanikPathshalaOfflineForm" target="_blank">Offline Paathshala</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; EasyJain. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
