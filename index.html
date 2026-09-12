@@ -4,35 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EasyJain</title>
+  <link rel="icon" href="https://lh3.googleusercontent.com/sitesv/AG8ngQWf1faq9hPUXhwvCYyIFYy1DlS8DJTAWCPX6T9rxIrxtAld6SdV6uCC8xD59vA6_6WBErdDF-1ecPUJ9H5cl62paNN7KP6XOqDz-8klmFyefRiAt_XnbDsm7IBuuK17gmEzsoatKWwCPaOH_LiUhfeyJVm7RXDYYur0BClEW9gLnpMhTq776iA9fF-EWBw=w16383">
+  <!-- Fonts matching Google Sites Impression theme -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  
   <style>
+    :root {
+      --primary-color: #a237be;
+      --text-main: #212121;
+      --bg-page: #ffffff;
+      --bg-section: #f7f7f7;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     }
 
     body {
-      background-color: #ffffff;
-      color: #333;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    /* Google Sites style header */
+    /* Header & Navigation */
     header {
       background: #ffffff;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      border-bottom: 1px solid #e0e0e0;
     }
 
-    .nav-container {
+    .nav-wrapper {
       max-width: 1200px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 12px 24px;
+      padding: 10px 24px;
+      min-height: 64px;
     }
 
     .brand {
@@ -40,173 +55,188 @@
       align-items: center;
       gap: 12px;
       text-decoration: none;
-      color: #111;
-      font-size: 1.25rem;
-      font-weight: 600;
+      color: #1f1f1f;
     }
 
     .brand img {
-      height: 34px;
+      height: 38px;
       width: auto;
       object-fit: contain;
+      display: block;
+    }
+
+    .brand span {
+      font-family: 'Oswald', sans-serif;
+      font-size: 20pt;
+      letter-spacing: 0.5px;
+      font-weight: 500;
+      text-transform: uppercase;
+      color: #1f1f1f;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 8px;
       flex-wrap: wrap;
     }
 
     nav a {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 12pt;
+      font-weight: 400;
+      color: #1f1f1f;
       text-decoration: none;
-      color: #444;
-      font-size: 0.95rem;
-      font-weight: 500;
-      padding: 6px 4px;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s ease;
+      padding: 8px 14px;
+      border-radius: 4px;
+      transition: background-color 0.15s ease, color 0.15s ease;
     }
 
-    nav a:hover,
+    nav a:hover {
+      background-color: rgba(31, 31, 31, 0.08);
+    }
+
     nav a.active {
-      color: #000;
-      border-bottom: 2px solid #000;
+      background-color: #1f1f1f;
+      color: #ffffff;
+      font-weight: 600;
     }
 
-    /* Hero Banner matching Google Sites */
-    .hero {
+    /* Hero Banner matching Google Sites Impression Header */
+    .hero-banner {
       position: relative;
-      height: 280px;
-      background: linear-gradient(135deg, #1f2937, #111827);
+      height: 340px;
+      width: 100%;
+      background-image: url('https://lh3.googleusercontent.com/sitesv/AG8ngQWx1tgNTBhMOYVCvlGXDmTOw1tv1C4ghmuXw1zg3q_o5176zpton0lYYqFatmbltuqFCqVKbw6eAzNVUuys8HnUB1-TTlV6LgJvH2YJ4-ESztlbogsIScE8hNTjF3m9REHs3A_WO3JKutQemYDI1fX2iDbXOqQKddCSHk-Pvkcy6dBbxfPTynO8WEZt=w16383');
+      background-position: top center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    .hero-banner::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(33, 33, 33, 0.6);
+      display: block;
+    }
+
+    .scroll-indicator {
+      position: relative;
+      z-index: 2;
+      margin-bottom: 24px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #ffffff;
-      text-align: center;
-      padding: 0 20px;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      outline: none;
     }
 
-    .hero h1 {
-      font-size: 3rem;
-      letter-spacing: 1px;
-      font-weight: 700;
+    .scroll-indicator svg {
+      fill: #ffffff;
+      width: 28px;
+      height: 28px;
     }
 
-    /* Stacked Full-Width Section Strips */
+    /* Content Sections (Stacked strips exactly like Google Sites) */
     .sections-container {
       display: flex;
       flex-direction: column;
-      gap: 24px;
-      max-width: 1100px;
-      margin: 32px auto;
-      padding: 0 20px;
     }
 
-    .banner-card {
-      position: relative;
-      height: 180px;
-      border-radius: 8px;
-      overflow: hidden;
+    .content-strip {
+      background-color: #ffffff;
+      padding: 34px 20px;
       display: flex;
+      justify-content: center;
+      align-items: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .content-strip:nth-child(even) {
+      background-color: var(--bg-section);
+    }
+
+    /* Google Sites Pill Button with Theme Accent Color */
+    .site-btn {
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .banner-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-    }
-
-    /* Backgrounds matching the section types */
-    .card-books {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1512820790803-83ca734da794?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-videos {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-paathshala {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-posters {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-queries {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-sankalp {
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
-                  url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&q=80');
-      background-size: cover;
-      background-position: center;
-    }
-
-    /* Google Sites Pill Button in center of strip */
-    .card-pill {
-      background: rgba(0, 0, 0, 0.65);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      background-color: var(--primary-color);
       color: #ffffff;
-      padding: 12px 36px;
+      border: 1px solid #ffffff;
       border-radius: 4px;
-      font-size: 1.35rem;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      transition: background 0.2s ease, border-color 0.2s ease;
-    }
-
-    .banner-card:hover .card-pill {
-      background: rgba(0, 0, 0, 0.85);
-      border-color: rgba(255, 255, 255, 0.7);
-    }
-
-    footer {
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 13pt;
+      line-height: 22px;
+      font-weight: 600;
+      padding: 12px 48px;
+      min-width: 240px;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.85rem;
-      color: #777;
-      border-top: 1px solid #eee;
-      margin-top: 50px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+      transition: opacity 0.2s ease, transform 0.1s ease;
     }
 
+    .site-btn:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+
+    .site-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Footer */
+    footer {
+      background-color: #ffffff;
+      border-top: 1px solid #e0e0e0;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 11pt;
+      color: #777;
+    }
+
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .banner-card { height: 140px; }
-      .card-pill { font-size: 1.1rem; padding: 10px 24px; }
-      nav { gap: 12px; font-size: 0.85rem; }
+      .hero-banner {
+        height: 250px;
+      }
+      .nav-wrapper {
+        flex-direction: column;
+        gap: 12px;
+      }
+      nav {
+        justify-content: center;
+        gap: 4px;
+      }
+      nav a {
+        font-size: 10.5pt;
+        padding: 6px 10px;
+      }
+      .site-btn {
+        min-width: 200px;
+        font-size: 12pt;
+        padding: 10px 32px;
+      }
     }
   </style>
 </head>
 <body>
 
+  <!-- Top Navigation Bar -->
   <header>
-    <div class="nav-container">
+    <div class="nav-wrapper">
       <a href="index.html" class="brand">
+        <img src="https://lh3.googleusercontent.com/sitesv/AG8ngQWf1faq9hPUXhwvCYyIFYy1DlS8DJTAWCPX6T9rxIrxtAld6SdV6uCC8xD59vA6_6WBErdDF-1ecPUJ9H5cl62paNN7KP6XOqDz-8klmFyefRiAt_XnbDsm7IBuuK17gmEzsoatKWwCPaOH_LiUhfeyJVm7RXDYYur0BClEW9gLnpMhTq776iA9fF-EWBw=w16383" alt="Jain">
         <span>EasyJain</span>
       </a>
       <nav>
@@ -221,38 +251,32 @@
     </div>
   </header>
 
-  <main>
-    <!-- Main Hero -->
-    <section class="hero">
-      <h1>EasyJain</h1>
+  <!-- Impression Theme Banner -->
+  <section class="hero-banner">
+    <button class="scroll-indicator" onclick="document.getElementById('sections').scrollIntoView({behavior: 'smooth'})" aria-label="Scroll down">
+      <svg viewBox="0 0 24 24">
+        <path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z"/>
+      </svg>
+    </button>
+  </section>
+
+  <!-- Homepage Sections -->
+  <main id="sections" class="sections-container">
+    <section class="content-strip">
+      <a href="books.html" class="site-btn">Books</a>
     </section>
 
-    <!-- Stacked sections matching Google Sites -->
-    <div class="sections-container">
-      <a href="books.html" class="banner-card card-books">
-        <span class="card-pill">Books</span>
-      </a>
+    <section class="content-strip">
+      <a href="videos.html" class="site-btn">Videos</a>
+    </section>
 
-      <a href="videos.html" class="banner-card card-videos">
-        <span class="card-pill">Videos</span>
-      </a>
+    <section class="content-strip">
+      <a href="paathshala.html" class="site-btn">Paathshala</a>
+    </section>
 
-      <a href="paathshala.html" class="banner-card card-paathshala">
-        <span class="card-pill">Paathshala</span>
-      </a>
-
-      <a href="posters.html" class="banner-card card-posters">
-        <span class="card-pill">Posters</span>
-      </a>
-
-      <a href="ask-queries.html" class="banner-card card-queries">
-        <span class="card-pill">Ask Queries</span>
-      </a>
-
-      <a href="sankalp-confessions.html" class="banner-card card-sankalp">
-        <span class="card-pill">Sankalp &amp; Confessions</span>
-      </a>
-    </div>
+    <section class="content-strip">
+      <a href="posters.html" class="site-btn">Posters</a>
+    </section>
   </main>
 
   <footer>
